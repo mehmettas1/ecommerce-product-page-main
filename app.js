@@ -51,7 +51,7 @@ function handleMinus(){
 }
 
 function nextImage(){
-    if(currentImg===4){
+    if(currentImg==4){
         currentImg=1;
     }else {
         currentImg++;
@@ -69,6 +69,44 @@ function prevImage() {
     thumbMob.src = `./images/image-product-${currentImg}.jpg`;
   }
 
+  function toggleCart(){
+    cart.classList.toggle("invisible");
+  }
+  function closeLightBox() {
+    lightbox.classList.add("invisible");
+  }
+
+  function openLightBox() {
+    lightbox.classList.remove("invisible");
+  }
+
+
+
+
+function addItem (){
+    if(amountValue >0) {
+        const total =125.00 * amountValue;
+        wrp.classList.remove("empty");
+        wrp.innerHTML =`<div class="product">
+        <div>
+          <img src="./images/image-product-1-thumbnail.jpg" class="product-img" alt="product">
+          <div class="product-info">
+            <p class="product-title">Fall Limited Edition Sneakers</p>
+           <p><span>$125.00</span> × <span class="number">${amountValue}</span> <b>$${total}</b></p>
+          </div>
+          <button class="delete-btn" onclick="deleteItem()"><img src="./images/icon-delete.svg" alt="delete"></button>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>`;
+      indicator.style.display ="block";
+      indicator.innerText=amountValue;
+    }
+}
+
+
+
+
+  
 menuBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
 plusBtn.addEventListener("click", handlePlus);
