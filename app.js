@@ -81,7 +81,11 @@ function prevImage() {
   }
 
 
-
+  function deleteItem() {
+    wrp.classList.add("empty");
+    wrp.innerHTML = `<p>Your cart is empty</p>`;
+    indicator.style.display = "none";
+}
 
 function addItem (){
     if(amountValue >0) {
@@ -104,6 +108,11 @@ function addItem (){
 }
 
 
+function deleteItem() {
+    wrp.classList.add("empty");
+    wrp.innerHTML = `<p>Your cart is empty</p>`;
+    indicator.style.display = "none";
+}
 
 
   
