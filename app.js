@@ -50,6 +50,24 @@ function handleMinus(){
     amount.innerText = amountValue;
 }
 
+function nextImage(){
+    if(currentImg===4){
+        currentImg=1;
+    }else {
+        currentImg++;
+
+    }
+    thumbMob.src = `./images/image-product-${currentImg}.jpg`;
+}
+
+function prevImage() {
+    if (currentImg == 1) {
+      currentImg = 4;
+    } else {
+      currentImg--;
+    }
+    thumbMob.src = `./images/image-product-${currentImg}.jpg`;
+  }
 
 menuBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
